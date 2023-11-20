@@ -26,6 +26,7 @@ public class MainGameState : GameState
         m_controllersManager.AddController(new MainUIController(uiRoot, m_mainUIModel));
         m_controllersManager.AddController(new KeyboardInputController(m_inputModel));
         m_controllersManager.AddController(new InputUIController(uiRoot, m_inputModel));
+        m_controllersManager.AddController(new EnemyController(m_enemyModel, m_playerModel, m_enemyInputModel));
         m_controllersManager.AddController(new PlayerController(m_playerModel, m_mainUIModel, this));
         m_controllersManager.AddController(new MotorcycleController(((PlayerView)m_playerModel.PlayerView).motorcycle, m_inputModel));
         m_controllersManager.AddController(new MotorcycleController(((EnemyView)m_enemyModel.EnemyView).motorcycle, m_enemyInputModel));

@@ -17,7 +17,6 @@ public class MotorcycleController : IBaseController, IFixedUpdateController
     }
     public void OnFixedUpdateExecute()
     {
-        //Debug.Log($"{m_inputModel.acceletarion}");
         if (m_inputModel.acceletarion != 0)
         {
             m_motorcycleView.WheelF.brakeTorque = 0;
