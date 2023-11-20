@@ -8,21 +8,27 @@ public class MainGameState : GameState
     private ShootingModel m_shootingModel;
     private MainUIModel m_mainUIModel;  
     private InputModel m_inputModel;
-    private EnemiesModel m_enemiesModel;
+    private InputModel m_enemyInputModel;
+    private EnemyModel m_enemyModel;
     public MainGameState(Transform uiRoot, MainUIModel mainUIModel) : base()
     {
         Index = GameStateIndex.Game;
         m_shootingModel = new ShootingModel();
         m_playerModel = new PlayerModel();
-        m_enemiesModel = new EnemiesModel();
+        m_enemyModel = new EnemyModel();
         m_inputModel = new InputModel();
+        m_enemyInputModel = new InputModel();
 
         m_mainUIModel = mainUIModel;
-        //m_playerModel.PlayerView = poolsManager.GetObjectFromPool(GameobjectsNameKeys.Player) as PlayerView;
+        m_playerModel.PlayerView = GameObject.FindObjectOfType<PlayerView>().GetComponent<PlayerView>() as PlayerView;
+        m_enemyModel.EnemyView = GameObject.FindObjectOfType<EnemyView>().GetComponent<EnemyView>() as EnemyView;
 
         m_controllersManager.AddController(new MainUIController(uiRoot, m_mainUIModel));
-        m_controllersManager.AddController(new InputUIController(uiRoot));
+        m_controllersManager.AddController(new KeyboardInputController(m_inputModel));
+        m_controllersManager.AddController(new InputUIController(uiRoot, m_inputModel));
         m_controllersManager.AddController(new PlayerController(m_playerModel, m_mainUIModel, this));
+        m_controllersManager.AddController(new MotorcycleController(((PlayerView)m_playerModel.PlayerView).motorcycle, m_inputModel));
+        m_controllersManager.AddController(new MotorcycleController(((EnemyView)m_enemyModel.EnemyView).motorcycle, m_enemyInputModel));
     }
 
     public override void OnEnterState()

@@ -1,9 +1,9 @@
-using UnityEngine.UI;
+using System;
 
 public class InputUIView : BaseView
 {
-    public Button Gas;
-    public Button Brake;
-    public Button Left;
-    public Button Right;
+    public UIButton Gas;
+    public UIButton Brake;
+    public UIButton Left;
+    public UIButton Right;
 }

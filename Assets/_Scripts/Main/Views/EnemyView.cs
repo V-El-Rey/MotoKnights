@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerModel 
+public class EnemyView : BaseView
 {
-    public BaseView PlayerView;
+    public MotorcycleView motorcycle;
 }

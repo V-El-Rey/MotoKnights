@@ -45,6 +45,17 @@ public class ControllersManager
         }
     }
 
+    public void OnFixedUpdateControllersExecute()
+    {
+        foreach (var controller in m_controllers)
+        {
+            if (controller is IFixedUpdateController controllerInstance)
+            {
+                controllerInstance.OnFixedUpdateExecute();
+            }
+        }
+    }
+
     public void AddController(IBaseController controller)
     {
         m_controllers.Add(controller);

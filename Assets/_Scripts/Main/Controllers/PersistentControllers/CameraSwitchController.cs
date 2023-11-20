@@ -24,6 +24,8 @@ public class CameraSwitchController : IBaseController, IEnterController, IExitCo
         {
             case 0: m_camerasView.mainMenuCamera.Priority = 10; break;
             case 1: m_camerasView.gameCamera.Priority = 10; break;
+            case 2: m_camerasView.endGameCamera.Priority = 10; break;   
+
         }
     }
 }

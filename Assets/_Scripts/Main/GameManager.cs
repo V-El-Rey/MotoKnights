@@ -44,4 +44,10 @@ public class GameManager : MonoBehaviour
         m_persistentControllersManager.OnUpdateControllersExecute();
         m_stateMachineController.Update();
     }
+
+    private void FixedUpdate()
+    {
+        m_persistentControllersManager.OnFixedUpdateControllersExecute();
+        m_stateMachineController.FixedUpdate();
+    }
 }

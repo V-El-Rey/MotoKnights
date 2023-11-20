@@ -50,6 +50,11 @@ public class StateMachineController
         m_currentState.OnUpdateState();
     }
 
+    public void FixedUpdate()
+    {
+        m_currentState.OnFixedUpdateState();
+    }
+
     public void InitializeFirstState()
     {
         m_currentState = m_gameStates[GameStateIndex.MainMenu];

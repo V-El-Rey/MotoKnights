@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class InputModel : BaseModel
 {
+    public float torqueCoeff = 10000;
+    public float brakeCoeff = 500;
+    public float maxSteeringAngle = 35;
+    public float maxSpeed = 140;
+
     public float acceletarion;
     public float brake;
-    public Vector2 steer;
+    public float steer;
     public override void ClearModel()
     {
         acceletarion = 0;
         brake = 0;
-        steer = Vector2.zero;
+        steer = 0;
     }
 }

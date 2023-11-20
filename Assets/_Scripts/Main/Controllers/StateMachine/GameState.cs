@@ -28,4 +28,9 @@ public abstract class GameState
     {
         m_controllersManager.OnExitControllersExecute();
     }
+
+    public virtual void OnFixedUpdateState()
+    {
+        m_controllersManager.OnFixedUpdateControllersExecute();
+    }
 }

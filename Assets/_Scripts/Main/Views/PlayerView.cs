@@ -1,14 +1,12 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerView : BaseView
-{ 
-    public Transform muzzle;
+{
+    public MotorcycleView motorcycle;
     public Action<string> onPlayerCollision;
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter(Collider collision)
     {
         onPlayerCollision?.Invoke(collision.tag);
     }
