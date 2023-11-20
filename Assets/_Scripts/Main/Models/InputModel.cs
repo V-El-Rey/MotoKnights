@@ -5,12 +5,12 @@ public class InputModel : BaseModel
     public float maxSteeringAngle = 35;
     public float maxSpeed = 140;
 
-    public float acceletarion;
+    public float acceleration;
     public float brake;
     public float steer;
     public override void ClearModel()
     {
-        acceletarion = 0;
+        acceleration = 0;
         brake = 0;
         steer = 0;
     }

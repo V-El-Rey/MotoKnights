@@ -14,7 +14,7 @@ public class KeyboardInputController : IBaseController, IUpdateController
 
         m_inputModel.steer = horizontalInput;
 
-        m_inputModel.acceletarion = verticalInput;
+        m_inputModel.acceleration = verticalInput;
         m_inputModel.brake = Input.GetKey(KeyCode.Space) ? 1 : 0;
     }
 }

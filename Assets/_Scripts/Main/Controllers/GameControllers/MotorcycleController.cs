@@ -17,11 +17,11 @@ public class MotorcycleController : IBaseController, IFixedUpdateController
     }
     public void OnFixedUpdateExecute()
     {
-        if (m_inputModel.acceletarion != 0)
+        if (m_inputModel.acceleration != 0)
         {
             m_motorcycleView.WheelF.brakeTorque = 0;
             m_motorcycleView.WheelR.brakeTorque = 0;
-            m_motorcycleView.WheelR.motorTorque = Mathf.Clamp(m_inputModel.torqueCoeff * m_inputModel.acceletarion, -m_inputModel.maxSpeed, m_inputModel.maxSpeed);
+            m_motorcycleView.WheelR.motorTorque = Mathf.Clamp(m_inputModel.torqueCoeff * m_inputModel.acceleration, -m_inputModel.maxSpeed, m_inputModel.maxSpeed);
         }
         else
         {

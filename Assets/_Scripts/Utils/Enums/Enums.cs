@@ -5,9 +5,10 @@ public enum GameStateIndex
     EndGame
 }
 
-public enum AsteroidSize
+public enum EnemyState
 {
-    Small,
-    Medium,
-    Big
+    Attack,
+    Retreat,
+    Stop,
+    GetBack
 }

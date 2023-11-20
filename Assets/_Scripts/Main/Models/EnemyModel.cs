@@ -4,7 +4,8 @@ namespace Assets.Scripts.Main.Models
     public class EnemyModel
     {
         public BaseView EnemyView;
-        public float sqrDistance;
-        public float angleToEnemy;
+        public EnemyState currentEnemyState;
+        public float sqrDistance = 15*15;
+        public float attackCooldown = 0.2f;
     }
 }

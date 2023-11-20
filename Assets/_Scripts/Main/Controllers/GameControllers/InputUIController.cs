@@ -35,8 +35,8 @@ namespace Assets.Scripts.Main.Controllers
         private void ResetSteer() => m_inputModel.steer = 0;
         private void SetBrake() => m_inputModel.brake = 1;
         private void ReleaseBrake() => m_inputModel.brake = 0;
-        private void SetAcceleration() => m_inputModel.acceletarion = 1;
-        private void ReleaseAcceleration() => m_inputModel.acceletarion = 0;
+        private void SetAcceleration() => m_inputModel.acceleration = 1;
+        private void ReleaseAcceleration() => m_inputModel.acceleration = 0;
 
         public void OnExitExecute()
         {

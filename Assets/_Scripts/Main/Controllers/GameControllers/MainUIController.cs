@@ -30,12 +30,6 @@ namespace Assets.Scripts.Main.Controllers
 
         public void OnUpdateExecute()
         {
-            m_gameUIView.Speed.text = m_mainUiModel.currentSpeed.ToString("0.0");
-            m_gameUIView.Coordinates.text = m_mainUiModel.currentPosition.ToString("0.0");
-            m_gameUIView.Angle.text = m_mainUiModel.currentAngle.ToString("0.0");
-            m_gameUIView.LasersLeft.text = m_mainUiModel.laserShotsLeft.ToString();
-            m_gameUIView.LasersCooldown.text = m_mainUiModel.laserCooldown.ToString("0.0");
-            m_gameUIView.Score.text = m_mainUiModel.score.ToString();
 
         }
     }
