@@ -22,14 +22,11 @@ namespace Assets.Scripts.Main.Controllers
             var obj = GameObject.Instantiate(m_uiPrefab, m_uiRoot);
             m_endGameView = obj.GetComponent<EndGameUIView>();
             m_endGameView.Restart.onClick.AddListener(() => m_currentState.changeStateRequest?.Invoke(GameStateIndex.Game));
-            m_endGameView.Exit.onClick.AddListener(() => Application.Quit());
-            m_endGameView.Score.text = m_mainUiModel.score.ToString();
         }
 
         public void OnExitExecute()
         {
             m_endGameView.Restart.onClick.RemoveAllListeners();
-            m_endGameView.Exit.onClick.RemoveAllListeners();
             GameObject.Destroy(m_endGameView.gameObject);
         }
     }
