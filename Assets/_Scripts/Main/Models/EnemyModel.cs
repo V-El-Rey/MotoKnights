@@ -6,6 +6,6 @@ namespace Assets.Scripts.Main.Models
         public BaseView EnemyView;
         public EnemyState currentEnemyState;
         public float sqrDistance = 15*15;
-        public float attackCooldown = 0.2f;
+        public float attackCooldown = 0.1f;
     }
 }

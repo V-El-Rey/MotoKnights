@@ -51,7 +51,6 @@ public class EnemyController : IBaseController, IUpdateController
                                 m_enemyModel.currentEnemyState = EnemyState.Stop;
                             }
                         }
-                        Debug.DrawLine(ray.origin, hit.point, Color.red);
                     }
                 }
                 break;
@@ -80,14 +79,13 @@ public class EnemyController : IBaseController, IUpdateController
                         else
                         {
                             m_enemyInputModel.acceleration = 0.5f;
-                            if (angle < -160.0F)
+                            if (angle < -175.0F)
                                 m_enemyInputModel.steer = -1;
-                            else if (angle > 160.0F)
+                            else if (angle > 175.0F)
                                 m_enemyInputModel.steer = 1;
                             else
                                 m_enemyInputModel.steer = 0;
                         }
-                        Debug.DrawLine(ray.origin, hit.point, Color.red);
                     }
                 }
                 break;
@@ -97,7 +95,6 @@ public class EnemyController : IBaseController, IUpdateController
                     m_enemyInputModel.brake = 1;
                     m_enemyInputModel.steer = 0;
                     m_cooldown -= Time.deltaTime;
-                    Debug.Log(m_cooldown);
                     if(m_cooldown <= 0.0f)
                     {
                         m_enemyModel.currentEnemyState = EnemyState.GetBack;
@@ -133,11 +130,5 @@ public class EnemyController : IBaseController, IUpdateController
         Vector3 targetDir = m_playerModel.PlayerView.objectTransform.position - m_enemyModel.EnemyView.objectTransform.position;
         Vector3 forward = m_enemyModel.EnemyView.objectTransform.forward;
         return Vector3.SignedAngle(targetDir, forward, Vector3.up);
-        //if (angle < -5.0F)
-        //    m_enemyInputModel.steer = 1;
-        //else if (angle > 5.0F)
-        //    m_enemyInputModel.steer = -1;
-        //else
-        //    m_enemyInputModel.steer = 0;
     }
 }
